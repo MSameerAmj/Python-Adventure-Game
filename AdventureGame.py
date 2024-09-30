@@ -7,112 +7,144 @@ class ItemState(Enum):
     USE =1
     CANNOTUSE =0
 
+inventory = []
+curr_loc = 'enterance'
 map = {
-    'Enterance' : {
-        'status' : State.ON,
+    'enterance' : {
+        'toOpen' : None,
         'description' : 'The grand entrance looms with towering stone arches, dim torchlight flickering along cold walls, while a wooden door to the north, guarding the unknown beyond.',
         'items' : None,
         'exits' : {
-            'north' : 'CourtYard'
-            },
-        'itemsToUse' : None
+            'north' : 'courtyard'
+            },   
     },
-    'CourtYard' : {
-        'STATUS': State.ON,
+    'courtyard' : {
+        'toOpen' : None,
         'description' : 'The courtyard, ringed by stone walls and overgrown gardens, holds a crumbling fountain, with red velvet curtains to the west leading further into the castle.To the North there is a heavy rusty iron gate. Do not Try to go east!!',
-        'items' : ['map', 'torch', ],
+        'items' : ['map', 'torch','iron gate','gold key' ],
         'exits' : {
-            'west' : 'Throne room',
-            'North': 'Armory',
-            'East' : 'Fence',
+            'west' : 'throne room',
+            'north': 'armory',
+            'east' : 'fence',
             'South' : 'Enterance',
-        },
-        'itemsToUse' : {
-            'key' : State.ON
-        }
+        }, 
     },
-    'Throne Room': {
-        'status' : State.OFF,
+    'throne room': {
+        'toOpen': 'torch',
         'description' : 'The grand throne room, with a large stone throne at the far end, To the South you can see some books through a slightly opened door. North goes to a bedroom',
-        'items' : ['Sword'],
+        'items' : ['sword'],
         'exits' : {
-            'south' : 'Library',
-            'north' : 'Bedroom',
-            'east' : 'CourtYard'
-        },
-        'itemsToUse' : {
-            'Torch' : State.ON
-        }
+            'south' : 'library',
+            'north' : 'bedroom',
+            'east' : 'courtyard'
+        },    
     },
-    'Library': {
-        'status' : State.ON,
+    'library': {
+        'toOpen' : None,
         'description' : 'A room filled with books, with a large wooden desk in the center. To the North, is Throne Room',
-        'items' : ['Book'],
+        'items' : ['book'],
         'exits': {
-            'North' : 'Throne Room',
-        },
-        'itemsToUse' : {
-            'map' : State.ON
-        }
+            'north' : 'throne room',
+        },     
     },
-    'Bedroom' : {
-        'status' : State.ON,
+    'bedroom' : {
+        'toOpen': None,
         'description' : 'A cozy bedroom, with a large bed in the center. To the North there is a curtain on a window,seems like something behind curtains.',
-        'items' : ['Lever'],
+        'items' : ['lever'],
         'exits' : {
-            'south' : 'Throne Room'
-        },
-        'itemsToUse' : {
-            'Lever' : State.ON
-        }
+            'south' : 'throne room'
+        },    
     },
-    'Armory' : {
-        'status' : State.OFF,
+    'armory' : {
+        'toOpen' : 'iron gate',
         'description' : 'The armory, lined with rows of glistening swords and battered shields, exudes a metallic scent, with a heavy wooden gate to the north leading to the battlements beyond.',
-        'items' : ['Shield'],
+        'items' : ['shield'],
         'exits' : {
-            'south' : 'Courtyard',
-            'North' : 'exit'
-        }
+            'south' : 'courtyard',
+            'north' : 'exit'
+        }        
     },
     'exit': {
-        'status' : State.ON,
+        'toOpen' : 'lever',
         'description' : 'WOOHOOO!! You are outside the castle',
         'items' : None,
         'exits' : None
     },
-    'Fence' : {
-        'status' : State.ON,
+    'fence' : {
+        'toOpen': None,
         'description' : 'Game Over! It is a Trap, You fell down into the mountains. ',
         'items' : None,
         'exits' : None
-    } 
+    }
 }
 
-Items = {
-    'Sword' : {
-        'status': State.ON,
-        'description':'There is a shiny sword beside the throne, can be used to fight with enemies',
+
+Items_in_game = {
+    'iron gate': {
+        'status' : ItemState.CANNOTUSE,
+        'description' : 'There is a rusty iron gate.',
+        'toUse': 'There must be something very strange to Open the iron gate.'
+    },
+    'sword' : {
+        'status' : ItemState.USE,
+        'description':'There is a shiny sword beside the throne, can be used to fight with enemies.',
+        'toUse' : 'There is no enemy ahead'
     },
     'sheild' : {
-        'status' : State.ON,
-        'description':'There is a sheild beside the door, it could protect you from wild animals outside'
+        'status' : ItemState.USE,
+        'description':'There is a sheild beside the door, it could protect you from wild animals outside.',
+        'toUse' : 'No wild animals inside the castle'
     },
     'key' : {
-        'status' : State.ON,
-        'description':'There is a key, it could be for something very important',
+        'status' : ItemState.USE,
+        'description':'There is a key, it could be for something very important.',
+        'toUse' : 'There should be something to unlock this feature'
     },
     'book': {
-        'status' : State.OFF,
-        'description': 'There is a book on a large wooden desk. You need to solve the riddle to open it'
+        'status' : ItemState.CANNOTUSE,
+        'description': 'There is a book on a large wooden desk.',
+        'toUse' : 'Cannot open it! There must be something very strange to see what inside!'
     },
     'lever': {
-        'status' : State.OFF,
-        'description':  'There is a lever on the wall, it could be used to open the secret door, There is a keyhole beside the lever',
+        'status' : ItemState.CANNOTUSE,
+        'description':  'There is a lever on the wall, with a keyhole beside the lever.',
+        'toUse' : 'it could be used to open a secret door!'
+
     },
     'map' : {
-        'status' : State.ON,
-        'description' : 'Map of an old treasure buried somewhere in the mountains'
+        'status' : ItemState.CANNOTUSE,
+        'description' : 'There is a map that could lead to some treasure buried in the mountains.',
+        'toUse' : 'What there is a riddle on the map, Solve it if you could'
+    }, 
+    'torch': {
+        'status' : ItemState.USE,
+        'description': 'There is a torch on the wooden table.',
+        'toUse':' There is no light, get some fire or sunlight to see'
     },
+    'gold key':{
+        'status' : ItemState.USE,
+        'description':'Something is shining, a gold key.',
+        'toUuse': 'you need to have a gadget to open it'
+    }
+}
+hurdles = {
+    'iron gate' : {
+        'status' : State.OFF,
+        'toOpen' : 'key',      
+            },
     
+    'book' : {
+        'status':State.OFF,
+        'toOpen':'riddle',
+            },
+               
+    'lever' :{
+        'status':  State.OFF,
+        'toOpen': 'gold key',                
+            },
+    
+    'torch':{
+        'status' : State.OFF,
+        'toOpen' : 'torch'
+            }
 }
