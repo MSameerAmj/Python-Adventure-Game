@@ -89,7 +89,7 @@ map = {
     } 
 }
 
-Items : {
+Items = {
     'Sword' : {
         'status': State.ON,
         'description':'There is a shiny sword beside the throne, can be used to fight with enemies',
