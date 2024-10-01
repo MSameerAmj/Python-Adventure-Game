@@ -1,4 +1,5 @@
 from enum import Enum
+import json as js
 class State(Enum):
     OFF =0
     ON =1 
