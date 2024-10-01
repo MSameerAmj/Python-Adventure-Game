@@ -285,8 +285,21 @@ def examine(item):
         print("Invalid Item")
     
 def save(current_location, inventory, hurdles):
-    print()
+        to_save = {
+        'current_location': current_location,
+        'inventory' : inventory,
+        'hurdles_On': hurdles 
+        }
+        json_object = js.dumps(to_save)
+        with open('Saved_Game.json', 'w') as writefile:
+            writefile.write(json_object)
     
 def Load():
-    print()
+    global curr_loc, inventory
+    with open('Saved_game.json' , 'r') as readfile:
+        data = js.load(readfile)
+        curr_loc = data['current_location']
+        inventory = data['inventory']
+        hurdle = data['hurdles_On']
+        return hurdle
     
