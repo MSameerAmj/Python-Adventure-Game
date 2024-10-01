@@ -91,7 +91,7 @@ The game will restore your last saved state from Saved_Game.json.
 Ensure that Saved_Game.json is in the same directory as the game script.
 
 
-SAMPLE GAMEPLAY 2:
+SAMPLE GAMEPLAY 1:
 
 ---- Gameplay Menu ----        
 
@@ -255,4 +255,73 @@ Enter: move north
 ==> Do You want to play Again? (Y/N) y
 
 
-SAMPLE GAMEPLAY 2
+SAMPLE GAMEPLAY 2:
+
+---- Gameplay Menu ----        
+
+==> What would you like to do? play
+
+Do you want to Load previos Game? (Y/N) y
+==> You are at courtyard
+
+The courtyard, ringed by stone walls and overgrown gardens, holds a crumbling fountain, with red velvet curtains to the west leading 
+further into the castle.To the North there is a heavy rusty iron_gate. Do not Try to go east!!
+
+Enter: inventory
+
+key    
+torch  
+       
+Enter: take map
+
+==> map added to inventory
+
+Enter: move west
+
+==> You moved to throne room
+
+==> The grand throne room, with a large stone throne at the far end, To the South you can see some books through a slightly opened door. North goes to a bedroom
+
+Enter: move north
+
+==> You moved to bedroom
+
+==> A cozy bedroom, with a large bed in the center. To the North there is a curtain on a window,seems like something behind curtains.
+Enter: lokk
+
+==> Invalid command
+
+Enter: look
+
+==> A cozy bedroom, with a large bed in the center. To the North there is a curtain on a window,seems like something behind curtains.
+==> There is a lever on the wall, with a keyhole beside the lever.
+==> Something is shining, a gold_key.
+
+Enter: take gold_key
+
+==> gold_key added to inventory
+
+Enter: use gold_key
+
+==> lever opened
+
+Enter: move south
+
+==> You moved to throne room
+
+==> The grand throne room, with a large stone throne at the far end, To the South you can see some books through a slightly opened door. North goes to a bedroom
+
+Enter: move east
+
+==> You moved to courtyard
+
+==> The courtyard, ringed by stone walls and overgrown gardens, holds a crumbling fountain, with red velvet curtains to the west leading further into the castle.To the North there is a heavy rusty iron_gate. Do not Try to go east!!
+
+Enter: move east
+
+==> You moved to fence
+
+==> Game Over! It is a Trap, You fell down into the mountains.
+
+
+==> Do You want to play Again? (Y/N)
