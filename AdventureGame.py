@@ -351,7 +351,7 @@ while True:
                     riddle = input('Once in a minute, twice in a moment, but never in years. What it is? ').lower()
                     print()
                     solve_riddle(riddle)
-                elif command == 'check inventory':
+                elif command == 'inventory':
                     check_inventory()
                 elif command == 'quit':
                     print()
