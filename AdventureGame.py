@@ -345,7 +345,7 @@ while True:
             else:
                 if 'look' in command:
                     look()
-                elif command == 'solve riddle':
+                elif command == 'solve':
                     print()
                     print('==> ', end='')
                     riddle = input('Once in a minute, twice in a moment, but never in years. What it is? ').lower()
