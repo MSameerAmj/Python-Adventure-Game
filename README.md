@@ -1,3 +1,5 @@
+ASHIR KHIZER
+SP23-BAI-011
 This repository contains functions for managing actions in a text-based adventure game. The game allows players to interact with items in a room, solve riddles, and manage their inventory.
 
 FEATURES
