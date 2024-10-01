@@ -214,6 +214,15 @@ def drop(item):
         inventory.remove(item)
     else:
         print(f'{item} not in inventory!')
+        
+def move(direction):
+    print()
+
+def use(item):
+    print()
+    
+def examine(item):
+    print()
     
 def save(current_location, inventory, hurdles):
     print()
