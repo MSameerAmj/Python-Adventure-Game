@@ -303,3 +303,75 @@ def Load():
         hurdle = data['hurdles_On']
         return hurdle
     
+## main starts here 
+
+while True:
+    print()
+    print('---- Gameplay Menu ----')
+    print()
+    menu = input('==> What would you like to do? ').lower()
+    print()
+    if(menu == 'quit'):
+        print('*****Thanks for playing!*****')
+        break
+    elif menu == 'play':
+        Load_game = input('Do you want to Load previos Game? (Y/N) ').lower()
+        if Load_game == 'y':
+            alreadysolved_hurdles = Load()
+            for hurdle in hurdles:
+                if hurdle in alreadysolved_hurdles:
+                    hurdles[hurdle]['status'] = State.ON
+        print(f'==> You are at {curr_loc}')
+        print()
+        print(map[curr_loc]['description'])
+        print()
+        while True:
+            command = input('Enter: ').lower()
+            command_parts = command.split(' ')
+            print()
+            if len(command_parts) > 1:
+                if 'move' in command:
+                    move(command_parts[1])
+                elif 'take' in command:
+                    take(command_parts[1])
+                elif 'use' in command:
+                    use(command_parts[1])
+                elif 'examine' in command:
+                    examine(command_parts[1])
+                elif 'drop' in command:
+                    drop(command_parts[1])
+                else:
+                    print('Invalid Syntax')
+            else:
+                if 'look' in command:
+                    look()
+                elif command == 'solve riddle':
+                    print()
+                    print('==> ', end='')
+                    riddle = input('Once in a minute, twice in a moment, but never in years. What it is? ').lower()
+                    print()
+                    solve_riddle(riddle)
+                elif command == 'check inventory':
+                    check_inventory()
+                elif command == 'quit':
+                    print()
+                    save_game = input('==> Do you want to Save the Game? (Y/N) ').lower()
+                    if save_game == 'y':
+                        save(curr_loc, inventory, [completed_hurdles for completed_hurdles in hurdles if hurdles[completed_hurdles]['status'] == State.ON])
+                        exit(0)
+                    else:
+                        exit(0)  
+                else:
+                    print('==> ', end='')
+                    print('Invalid command')
+            print()
+            if curr_loc == 'exit' or curr_loc == 'fence':
+                print()
+                again = input('==> Do You want to play Again? (Y/N) ').lower()
+                print()
+                if again == 'y':
+                    continue
+                else:
+                    break
+    else:
+        print('Invalid Command')
