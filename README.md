@@ -90,3 +90,169 @@ Upon starting the game, choose to load a previous game.
 The game will restore your last saved state from Saved_Game.json.
 Ensure that Saved_Game.json is in the same directory as the game script.
 
+
+SAMPLE GAMEPLAY 2:
+
+---- Gameplay Menu ----        
+
+==> What would you like to do? play
+
+Do you want to Load previos Game? (Y/N) n
+==> You are at enterance
+
+The grand entrance looms with towering stone arches, dim torchlight flickering along cold walls, while a wooden door to the north, guarding the unknown beyond.
+
+Enter: move north
+
+==> You moved to courtyard
+
+==> The courtyard, ringed by stone walls and overgrown gardens, holds a crumbling fountain, with red velvet curtains to the west leading further into the castle.To the North there is a heavy rusty iron_gate. Do not Try to go east!!
+
+Enter: look
+
+==> The courtyard, ringed by stone walls and overgrown gardens, holds a crumbling fountain, with red velvet curtains to the west leading further into the castle.To the North there is a heavy rusty iron_gate. Do not Try to go east!!
+
+==> There is a map that could lead to some treasure buried in the mountains.
+==> There is a torch on the wooden table.
+==> There is a rusty iron_gate.
+==> There is a key, it could be for something very important.
+
+Enter: take key
+
+==> key added to inventory
+
+Enter: take torch
+
+==> torch added to inventory
+
+Enter: take map
+
+==> map added to inventory
+
+Enter: move west
+
+==>  There is no light, get some fire or sunlight to see
+
+Enter: use torch
+
+==> torch opened
+
+Enter: move west
+
+==> You moved to throne room
+
+==> The grand throne room, with a large stone throne at the far end, To the South you can see some books through a slightly opened door. North goes to a bedroom
+
+Enter: move south
+
+==> You moved to library
+
+==> A room filled with books, with a large wooden desk in the center. To the North, is Throne Room
+
+Enter: look
+
+==> A room filled with books, with a large wooden desk in the center. To the North, is Throne Room
+
+==> There is a book on a large wooden desk.
+
+Enter: take book
+
+==> book added to inventory
+
+Enter: use book
+
+==> Cannot open it! There must be something very strange to see what inside!
+
+Enter: move north
+
+==> You moved to throne room
+
+==> The grand throne room, with a large stone throne at the far end, To the South you can see some books through a slightly opened door. North goes to a bedroom
+
+Enter: move east
+
+==> You moved to courtyard
+
+==> The courtyard, ringed by stone walls and overgrown gardens, holds a crumbling fountain, with red velvet curtains to the west leading further into the castle.To the North there is a heavy rusty iron_gate. Do not Try to go east!!
+
+Enter: use map
+
+==> What there is a riddle on the map, Solve it if you could
+
+Enter: solve
+
+
+==> Once in a minute, twice in a moment, but never in years. What it is? m
+
+==> woah ! You solved the riddle, but there is nothing inside the book
+
+Enter: move west
+
+==> You moved to throne room
+
+==> The grand throne room, with a large stone throne at the far end, To the South you can see some books through a slightly opened door. North goes to a bedroom
+
+Enter: move north
+
+==> You moved to bedroom
+
+==> A cozy bedroom, with a large bed in the center. To the North there is a curtain on a window,seems like something behind curtains.
+Enter: look
+
+==> A cozy bedroom, with a large bed in the center. To the North there is a curtain on a window,seems like something behind curtains.
+==> There is a lever on the wall, with a keyhole beside the lever.
+==> Something is shining, a gold_key.
+
+Enter: take gold_key
+
+==> gold_key added to inventory
+
+Enter: take lever
+
+==> Cannot add lever in inventory
+
+Enter: use lever
+
+==> Item not in inventory!
+
+Enter: use gold_key
+
+==> lever opened
+
+Enter: move south
+
+==> You moved to throne room
+
+==> The grand throne room, with a large stone throne at the far end, To the South you can see some books through a slightly opened door. North goes to a bedroom
+
+Enter: move east
+
+==> You moved to courtyard
+
+==> The courtyard, ringed by stone walls and overgrown gardens, holds a crumbling fountain, with red velvet curtains to the west leading further into the castle.To the North there is a heavy rusty iron_gate. Do not Try to go east!!
+
+Enter: use key
+
+==> iron_gate opened
+
+Enter: move south
+
+==> There is a wall to the south of courtyard. Cannot go ahead!
+
+Enter: move north
+
+==> You moved to armory
+
+==> The armory, lined with rows of glistening swords and battered shields, exudes a metallic scent, with a heavy wooden gate to the north leading to the battlements beyond.
+
+Enter: move north
+
+==> You moved to exit
+
+==> WOOHOOO!! You are outside the castle
+
+
+==> Do You want to play Again? (Y/N) y
+
+
+SAMPLE GAMEPLAY 2
