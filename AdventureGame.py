@@ -153,3 +153,25 @@ hurdles = {
         'toOpen' : 'torch'
     }
 }
+
+def look():
+    print()
+    
+def take(item):
+    print()
+    
+def solve_riddle(answer):
+    print()
+
+def check_inventory():
+    print()
+    
+def drop(item):
+    print()
+    
+def save(current_location, inventory, hurdles):
+    print()
+    
+def Load():
+    print()
+    
